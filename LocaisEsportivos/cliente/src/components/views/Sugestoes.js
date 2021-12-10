@@ -1,16 +1,14 @@
-import React, {useEffect, useState} from 'react';
 import '../../style/Estilo.css';
 import { NavLink } from 'react-router-dom';
-import Axios from "axios";
 
 const Sugestoes = () => {
+
   return (
    <div>
 
     <nav>
         <ul>
-        <li><NavLink to="/" exact>Início</NavLink></li>
-        <li><NavLink to="/galeriafotos" exact>Fotos</NavLink></li>
+        <li><NavLink to="/" exact>Fotos</NavLink></li>
         <li><NavLink to="/sugestoes" exact><b>Sugestões</b></NavLink></li>
         <li><NavLink to="/cadastro" exact>Cadastro</NavLink></li>
         <li><NavLink to="/login" exact>Login</NavLink></li>
@@ -31,11 +29,13 @@ const Sugestoes = () => {
         <input type="hidden" name="redirect" value="http://localhost:3000/"/>
 
         <label for="nomeId"><b>Nome:</b></label>
-        <input type="text" name="nome" id="nomeId" placeholder="Nome" required></input><br></br><br></br>
+        <input type="text" minLength="3" maxLength="60" name="nome" id="nomeId" placeholder="Nome" required></input><br></br><br></br>
+
         <label for="emailId"><b>Email:</b></label>
         <input type="email" name="replyto" id="emailId" placeholder="Example@gmail.com" required></input><br></br><br></br>
+
         <label for="comentarioId"><b>Texto:</b></label>
-        <textarea rows="8" cols="54" name="comentario" id="comentarioId" placeholder="Escreva as suas sugestões aqui..." required></textarea><br></br>
+        <textarea rows="8" cols="54" maxLength="100" name="comentario" id="comentarioId" placeholder="Escreva as suas sugestões aqui..." required></textarea><br></br>
 
         <br></br>
         <input type="submit" name="btEnviar" value="Enviar"></input>

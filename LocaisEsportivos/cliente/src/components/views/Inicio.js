@@ -5,10 +5,11 @@ import Axios from "axios";
 import CardInicio from '../card/CardInicio';
 
 const Inicio = () => {
+
   const [listarLocais, setListarLocais] = useState();
 
   useEffect(()=>{
-    Axios.get("http://localhost:3001/").then((response)=>{
+    Axios.get("http://localhost:3001/inicio").then((response)=>{
   
       setListarLocais(response.data);
     });
@@ -20,17 +21,10 @@ const Inicio = () => {
   <div>
         <nav>
             <ul>
-              <li><NavLink to="/" exact><b>Início</b></NavLink></li>
-              <li><NavLink to="/galeriafotos" exact>Fotos</NavLink></li>
-              <li><NavLink to="/sugestoes" exact>Sugestões</NavLink></li>
-              <li><NavLink to="/cadastro" exact>Cadastro</NavLink></li>
-              <li><NavLink to="/login" exact>Login</NavLink></li>
+              <li><NavLink to="/inicio" exact><b>Início</b></NavLink></li>
+              <li><NavLink to="/cadastrarlocais" exact>Cadastrar</NavLink></li>
+              <li><NavLink to="/logout" exact>Logout</NavLink></li>
             </ul>
-
-            <form>
-             <input type="search" name="busca" placeholder="Buscar um local"></input>
-             <input type="submit" onClick="" value="Buscar"></input>
-            </form>
 
         </nav>
 
@@ -39,12 +33,13 @@ const Inicio = () => {
       <article>
         <h2>Locais Esportivos de Campinas</h2>
 
+        {console.log(listarLocais)}
         {typeof listarLocais !== "undefined" && listarLocais.map((value)=>{
          return <CardInicio 
-         key={value.id}
+         key={value.idlocal}
          listCard={listarLocais}
          setListCard={setListarLocais}
-         id={value.id}
+         id={value.idlocal}
          nomelocal={value.nomelocal}
          endereco={value.endereco}
          descricao={value.descricao}

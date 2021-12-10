@@ -6,17 +6,19 @@ import Sugestoes from "../components/views/Sugestoes";
 import Cadastro from "../components/views/Cadastro";
 import Login from "../components/views/Login";
 import CadastrarLocais from "../components/views/CadastrarLocais";
+import Logout from "../components/views/Logout";
 
 
 const Routes = () => {
    return(
        <BrowserRouter>
-           <Route component = { Inicio }  path="/" exact />
-           <Route component = { GaleriaFotos }  path="/galeriafotos" exact />
+           <Route component = { GaleriaFotos }  path="/" exact />
+           <Route component = { Inicio }  path="/inicio" exact />
            <Route component = { Sugestoes }  path="/sugestoes" exact />
            <Route component = { Cadastro }  path="/cadastro" exact />
            <Route component = { Login }  path="/login" exact />
            <Route component = { CadastrarLocais }  path="/cadastrarlocais" exact />
+           <Route component = { Logout }  path="/logout" exact />
        </BrowserRouter>
    )
 }

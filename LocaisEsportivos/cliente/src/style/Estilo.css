@@ -21,6 +21,12 @@ html, body {
     font-family: 'Verdana', serif;
     color: #2a2a2a;
   }
+
+  .letra {
+    font-family: 'Verdana', serif;
+    color: #2a2a2a;
+    font-size: 1.5rem;
+  }
   
   h1 {
     font-size: 4rem;
@@ -38,6 +44,12 @@ html, body {
   h3 {
     font-size: 2.2rem;
     color:rgb(11, 11, 138);
+  }
+
+  span{
+    font-size: 1.3rem;
+    color: rgb(255, 16, 16);
+    font-weight: bold;
   }
   
   p, li {
@@ -133,8 +145,22 @@ html, body {
     border-width: 1px;
     border-color: darkblue;
   }
-  
+
+  input[type="url"] {
+    padding: 5px;
+    width: 400px;
+    border-width: 1px;
+    border-color: darkblue;
+  }
+
   input[type="password"] {
+    padding: 5px;
+    width: 400px;
+    border-width: 1px;
+    border-color: darkblue;
+  }
+
+  .camposCadastro {
     padding: 5px;
     width: 400px;
     border-width: 1px;
@@ -169,5 +195,6 @@ html, body {
   .alinhar{
     margin-left: 23px;
   }
+
 
  

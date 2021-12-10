@@ -8,7 +8,7 @@ const GaleriaFotos = () => {
   const [listarFotos, setListarFotos] = useState();
 
   useEffect(()=>{
-    Axios.get("http://localhost:3001/galeriafotos").then((response)=>{
+    Axios.get("http://localhost:3001/").then((response)=>{
   
       setListarFotos(response.data);
     });
@@ -20,8 +20,7 @@ const GaleriaFotos = () => {
 
     <nav>
       <ul>
-      <li><NavLink to="/" exact>Início</NavLink></li>
-      <li><NavLink to="/galeriafotos" exact><b>Fotos</b></NavLink></li>
+      <li><NavLink to="/" exact><b>Fotos</b></NavLink></li>
       <li><NavLink to="/sugestoes" exact>Sugestões</NavLink></li>
       <li><NavLink to="/cadastro" exact>Cadastro</NavLink></li>
       <li><NavLink to="/login" exact>Login</NavLink></li>
@@ -31,7 +30,7 @@ const GaleriaFotos = () => {
     <main>
 
       <article>
-        <h2>Fotos de outros Locais Esportivos da região</h2>
+        <h2>Fotos de Locais Esportivos de Campinas e região</h2>
 
         {typeof listarFotos !== "undefined" && listarFotos.map((value)=>{
          return <CardGaleria 
